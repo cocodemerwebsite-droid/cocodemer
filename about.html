@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>COCO DEMER | Our Journey</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#bf834f",
+            "deep-forest": "#25472d",
+            "soft-beige": "#d6c6a5",
+            "background-light": "#f8f7f6",
+            "background-dark": "#161413",
+          },
+          fontFamily: {
+            "display": ["Montserrat", "sans-serif"],
+            "serif-accent": ["Tan Twinkle", "serif"]
+          },
+          borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+        },
+      },
+    }
+    </script>
+<style>
+    @font-face {
+        font-family: 'Tan Twinkle';
+        src: url('./font/TANTWINKLE.ttf') format('truetype');
+    }
+    @font-face {
+        font-family: 'Montserrat';
+        src: url('./font/Montserrat-Light.ttf') format('truetype');
+        font-weight: 300;
+    }
+    @font-face {
+        font-family: 'Montserrat';
+        src: url('./font/Montserrat-Regular.ttf') format('truetype');
+        font-weight: 400;
+    }
+    @font-face {
+        font-family: 'Montserrat';
+        src: url('./font/Montserrat-Medium.ttf') format('truetype');
+        font-weight: 500;
+    }
+    @font-face {
+        font-family: 'Montserrat';
+        src: url('./font/Montserrat-SemiBold.ttf') format('truetype');
+        font-weight: 600;
+    }
+    @font-face {
+        font-family: 'Montserrat';
+        src: url('./font/Montserrat-Bold.ttf') format('truetype');
+        font-weight: 700;
+    }
+    .thin-gold-divider {
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #bf834f, transparent);
+        width: 100%;
+        opacity: 0.4;
+    }
+    .hero-gradient {
+        background: linear-gradient(180deg, rgba(26, 36, 30, 0.4) 0%, rgba(18, 20, 18, 1) 100%);
+    }
+    .whatsapp-float {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        z-index: 50;
+    }
+    body {
+        font-family: 'Montserrat', sans-serif;
+    }
+    .mobile-menu {
+        display: none;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #25472d;
+        border-bottom: 1px solid rgba(191, 131, 79, 0.2);
+        z-index: 40;
+    }
+    .mobile-menu.active {
+        display: flex;
+        flex-direction: column;
+    }
+    .mobile-menu a {
+        padding: 16px 24px;
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        border-bottom: 1px solid rgba(191, 131, 79, 0.1);
+        transition: all 0.3s;
+    }
+    .mobile-menu a:hover {
+        color: #bf834f;
+        background: rgba(191, 131, 79, 0.1);
+    }
+    #hamburger {
+        display: none;
+    }
+    @media (max-width: 768px) {
+        #hamburger {
+            display: flex;
+        }
+    }
+</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 overflow-x-hidden">
+<!-- WhatsApp Floating Action Button -->
+<a class="whatsapp-float bg-[#25D366] text-white p-4 rounded-full shadow-2xl flex items-center justify-center hover:scale-105 transition-transform" href="https://wa.me/9895522449?text=Hello%20there%2C%20I%20have%20a%20question" target="_blank">
+<span class="material-symbols-outlined">chat</span>
+</a>
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Sticky Navigation -->
+<nav class="fixed top-0 w-full z-50 border-b border-primary/20 px-6 md:px-20 py-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<figure>
+    <img width="100px" src="./img/cocodemer-bg-none.png" alt="">
+</figure>
+</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="text-white/80 hover:text-primary text-sm font-medium tracking-widest uppercase transition-colors" href="index.html">Home</a>
+<a class="text-white/80 hover:text-primary text-sm font-medium tracking-widest uppercase transition-colors" href="product.html">Fragrance</a>
+<a class="text-white/80 hover:text-primary text-sm font-medium tracking-widest uppercase transition-colors" href="soon.html">Coming&nbsp;Soon</a>
+<a class="text-white/80 hover:text-primary text-sm font-medium tracking-widest uppercase transition-colors" href="about.html">About</a>
+<a class="text-white/80 hover:text-primary text-sm font-medium tracking-widest uppercase transition-colors" href="culture.html">Culture</a>
+<a class="text-white/80 hover:text-primary text-sm font-medium tracking-widest uppercase transition-colors" href="contact.html">Contact</a>
+</div>
+<button id="hamburger" class="md:hidden text-white text-2xl p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<a href="product.html" class="hidden md:inline-block bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-full text-xs font-bold tracking-widest uppercase transition-all">
+            Discovery Set
+        </a>
+</nav>
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="mobile-menu">
+<a href="index.html">Home</a>
+<a href="product.html">Fragrance</a>
+<a href="soon.html">Coming Soon</a>
+<a href="about.html">About</a>
+<a href="culture.html">Culture</a>
+<a href="contact.html">Contact</a>
+</div>
+<script>
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+hamburger.addEventListener('click', function() {
+    mobileMenu.classList.toggle('active');
+});
+document.querySelectorAll('#mobile-menu a').forEach(link => {
+    link.addEventListener('click', function() {
+        mobileMenu.classList.remove('active');
+    });
+});
+</script>
+<main class="flex-1">
+<!-- Hero Section -->
+<section class="relative h-[90vh] flex flex-col justify-end px-6 lg:px-40 pb-20">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 hero-gradient z-10"></div>
+<div class="w-full h-full bg-center bg-cover" data-alt="Enchanted deep misty green forest canopy" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC7yXoKi4DA8hblGitJYr55H7ciN-6KO6xiTAl1_ubcZqxMGw7_fbDc_LZCsURntJxErZn3RRSlJH7UU46LntqKL4p3_kzZXzA5-3cGGUh3UDzf1jprms2fEuJ08O9WBvtCUOA_GuTGvt2nh7_dSm0ZsdAh0KZzSVbEEU5eePCApEWkBd-Nb49AAr66-il5QX1SRHcbhc9BF2_esSFBaLekGsgpcL2Tz3pnGhFT1eDkwLRW0qD_o5l_BvRERwdvzNAqf68QvCxiPshE');"></div>
+</div>
+<div class="relative z-20 max-w-4xl">
+<span class="text-primary uppercase tracking-[0.4em] text-sm mb-4 block">Established in the Wilderness</span>
+<h2 class="text-6xl md:text-8xl font-extralight leading-tight mb-8 tan-twinkle-style">OUR <span class="text-primary italic">JOURNEY</span></h2>
+<p class="text-lg md:text-xl text-slate-300 font-light max-w-2xl leading-relaxed">
+                        A cinematic exploration into the heart of olfactory storytelling. From the damp moss of northern forests to the sun-drenched resins of the south.
+                    </p>
+</div>
+</section>
+<!-- The Vision Section (Beige Background) -->
+<section class="bg-beige dark:bg-background-dark py-32 px-6 lg:px-40">
+<div class="thin-gold-divider mb-20"></div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div>
+<h3 class="text-primary uppercase tracking-widest text-sm mb-6">The Vision</h3>
+<h4 class="text-4xl md:text-5xl text-forest dark:text-slate-100 font-light leading-tight mb-8 tan-twinkle-style">
+                            Raw elegance meets <br/><span class="font-bold">untamed nature.</span>
+</h4>
+<p class="text-forest/80 dark:text-slate-400 text-lg leading-relaxed mb-8">
+                            Founded on the principles of cinematic storytelling, COCO DEMER seeks to capture the soul of the wilderness in every drop. We believe that fragrance is not just a scent, but a portal to a memory yet to be made.
+                        </p>
+<div class="flex gap-4">
+<button class="px-8 py-3 bg-forest text-beige dark:bg-primary dark:text-background-dark font-bold uppercase tracking-widest text-xs rounded-full">Explore Ethos</button>
+</div>
+</div>
+<div class="relative aspect-[4/5] overflow-hidden rounded-xl border border-primary/20 shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="Artistic perfume bottle in natural light shadow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUXgenSH_E34v7Ke6PFmjEqipd6iAsdSN9-1ZQylLsx2q0F5cavFDoVpp1pJjv7LS4BaGemqlXIaRGy3ykupj2D2IqRE4KuXCLxkxbhZ2l-rgNDwFpq4rS-BVDMtHgVp7LolobIM16bSAgX8qN0YHT5EU3kyIa3cJcu2YK0uZg2ZAt9UuHZOnmAVwIYblStOCX3ZmYz5nv7O-YlxzCEs-rbT27S_Y0m61XIwFVgUiSIR5H3euu4_oJuzX6iyNRUiAb0K1clw8cOqXO"/>
+</div>
+</div>
+</section>
+<!-- Scent Sourcing Section (Forest Green) -->
+<section class="bg-forest py-32 px-6 lg:px-40 text-slate-100">
+<div class="flex flex-col items-center text-center mb-24">
+<span class="text-primary uppercase tracking-[0.5em] text-xs mb-6">Origins</span>
+<h3 class="text-4xl md:text-6xl font-extralight italic">Scent Sourcing</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="group">
+<div class="aspect-square overflow-hidden rounded-lg mb-6 bg-background-dark border border-primary/20">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="Raw botanical ingredients and dried herbs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYHjd_01vK8X7y1RTSLEuzfYG8-cWI_qWBf2G930Ehzw5PuAiy30KQBkNxtScZYVin6kA3aIj0vxPyxU6EhoHw8f49lbSqNviiLYdVx6Hrc3QJlSAcdvUkq5v_zOBiSnmzp1eo29nkZLSkoZF7OdNOQxiXXPxDYftn1vUmZ_4EsWlx1mlvuTRCGJPwq5PP3l6QZbEmMMzu3BLLVGmL0jfbdLV-42HFj7ftNu7irGY_qb3HVmY8f21Um7BBCAfaVoEWM7Wr38mqCk6y"/>
+</div>
+<h5 class="text-primary uppercase tracking-widest text-sm mb-3">Rare Botanicals</h5>
+<p class="text-slate-400 text-sm leading-relaxed">Sourcing only the most resilient flora from high-altitude alpine regions.</p>
+</div>
+<div class="group">
+<div class="aspect-square overflow-hidden rounded-lg mb-6 bg-background-dark border border-primary/20">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="Ancient tree resins and amber textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqirGAnnrF8YZycb_Bas7YT_wyR9IN42804P_bTVU0UbBQsJkoNsNjMJ7BB8I9oD9Mu0_sM0yZH48gqbna9JcUBdUhx89yVRwdO8fWAG76z1HCtNXQ1Ul1sfLPN7wrCcJclhB73Ic9jhs0aUPx9ECpdlr4bX3oxCBNVji2iwZK-rIzXzXs61rnw7J1FYpTssZLfdoh0PrhdSbYQknkCGoGcUfXfL0DAAqERb8uKdJm_6CCnGtfEVJkgkmmRgIBIu8b_YFiL0DbZwsv"/>
+</div>
+<h5 class="text-primary uppercase tracking-widest text-sm mb-3">Ancient Resins</h5>
+<p class="text-slate-400 text-sm leading-relaxed">Hand-tapped resins from century-old forests in the heart of the Mediterranean.</p>
+</div>
+<div class="group">
+<div class="aspect-square overflow-hidden rounded-lg mb-6 bg-background-dark border border-primary/20">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="Cold mountain water and mossy stone" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAD_sO3N-JvalSrLewV1XskIz2RYBtY-fmPo0yOf_rLPuIz3cuTknULI1YMmWOCMkfzwv_lyFQo1Dsjl2WZNn0dIMltvKmk0wF1LhV9ZAiO7gkBheIdVBw_oFxrdpwn9q_lQnt_hNZ6kqObe_d9NgIr-FmK_P-XH2aF2oNcUhrPLpPojviN3fy7UIKJUhjsNLPhDWiQQvZprkRdwaa37jQom9dRchIPpwJ9vILlSIvx3iqC99cHoMrBUC7W-9DtOB7ylxtcFqWEEsgV"/>
+</div>
+<h5 class="text-primary uppercase tracking-widest text-sm mb-3">Pure Elements</h5>
+<p class="text-slate-400 text-sm leading-relaxed">Glacial water and sea salts collected from the edge of the Atlantic coast.</p>
+</div>
+</div>
+</section>
+<!-- Artisanal Craftsmanship Section -->
+<section class="py-32 px-6 lg:px-40 bg-background-light dark:bg-background-dark">
+<div class="thin-gold-divider mb-20"></div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+<div class="lg:col-span-4 sticky top-32">
+<h3 class="text-primary uppercase tracking-widest text-sm mb-6">Artisanal Craftsmanship</h3>
+<h4 class="text-4xl font-light mb-8">Every bottle is a testament to <span class="italic">time-honored traditions</span>.</h4>
+<p class="text-slate-500 dark:text-slate-400 leading-relaxed mb-6">
+                            Our laboratory is a place of slow magic. We refuse the speed of modern industry in favor of small-batch blending that ensures the highest potency and complexity.
+                        </p>
+</div>
+<div class="lg:col-span-8 flex flex-col gap-24">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="flex flex-col gap-6">
+<div class="bg-primary/5 rounded-xl p-8 border border-primary/10">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">precision_manufacturing</span>
+<h6 class="text-xl font-bold mb-3">Hand-Blown Glass</h6>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Artisanally crafted vessels, each with its own unique imperfections, reflecting the organic nature of our ingredients.</p>
+</div>
+<div class="bg-primary/5 rounded-xl p-8 border border-primary/10">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">science</span>
+<h6 class="text-xl font-bold mb-3">6-Month Aging</h6>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">We allow our blends to macerate for months in temperature-controlled stone vaults to achieve peak depth.</p>
+</div>
+</div>
+<div class="relative overflow-hidden rounded-xl h-full min-h-[400px]">
+<img class="w-full h-full object-cover" data-alt="Close up of artisanal gold leaf application" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUyihA8Y24dyPn9VFYnBjkFsu8hOaTpWGI9Ye0gWYjOU521jBDLZGKebhtot7upe0ROjz7qZVt2cu93MDTr025kspIkA4UsSL3PxMUY6yq4-38uYV0Dq4m86Ci-9S5yKaWJ8rso4U3cgEfdiTMPTG_5c98KsBP6fp9OuZB8ZE87ILpTqaShtW_g6PJLFV5jTomEiINfx2GR68v-6QTB7zHXjW5ZvJvTlCxXktQ11M_t57-Q4d5brJonPVccvFaS0Cfd4pRo9Xx2Gu_"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final Quote / Outro -->
+<section class="py-40 flex flex-col items-center justify-center text-center px-6 bg-beige dark:bg-forest">
+<div class="max-w-3xl">
+<span class="material-symbols-outlined text-primary text-6xl mb-10">format_quote</span>
+<h2 class="text-4xl md:text-6xl font-extralight text-forest dark:text-slate-100 leading-tight italic">
+                        "Fragrance is the invisible architecture of memory."
+                    </h2>
+<p class="mt-8 text-primary font-bold uppercase tracking-[0.3em]">- THE FOUNDER</p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-background-dark border-t border-primary/10 py-20 px-6 lg:px-40">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="md:col-span-1">
+<div class="flex items-center gap-3 mb-8">
+<div class="text-primary">
+<span class="material-symbols-outlined text-2xl">nature_people</span>
+</div>
+<h1 class="text-lg font-extrabold tracking-[0.2em] text-slate-100 uppercase">COCO DEMER</h1>
+</div>
+<p class="text-slate-500 text-sm leading-relaxed">
+                        A boutique maison dedicated to the artistry of scent and the preservation of wilderness stories.
+                    </p>
+</div>
+<div>
+<h6 class="text-primary uppercase tracking-widest text-xs font-bold mb-6">Collections</h6>
+<ul class="flex flex-col gap-4 text-slate-400 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">The Forest Line</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Oceanic Resins</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Limited Editions</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Discovery Set</a></li>
+</ul>
+</div>
+<div>
+<h6 class="text-primary uppercase tracking-widest text-xs font-bold mb-6">Explore</h6>
+<ul class="flex flex-col gap-4 text-slate-400 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Our Journey</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">The Laboratory</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Sourcing Map</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Sustainability</a></li>
+</ul>
+</div>
+<div>
+<h6 class="text-primary uppercase tracking-widest text-xs font-bold mb-6">Newsletter</h6>
+<p class="text-slate-500 text-xs mb-4">Join the circle for early releases and field notes.</p>
+<div class="flex">
+<input class="bg-primary/5 border-primary/20 text-slate-100 text-sm w-full rounded-l-lg focus:ring-primary focus:border-primary" placeholder="Email Address" type="email"/>
+<button class="bg-primary px-4 rounded-r-lg">
+<span class="material-symbols-outlined text-background-dark">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="mt-20 pt-8 border-t border-primary/5 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-slate-600 text-[10px] uppercase tracking-widest">© 2024 COCO DEMER. ALL RIGHTS RESERVED.</p>
+<div class="flex gap-8 text-slate-600">
+<a class="hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-xl">social_leaderboard</span></a>
+<a class="hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-xl">camera</span></a>
+<a class="hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-xl">share</span></a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>
