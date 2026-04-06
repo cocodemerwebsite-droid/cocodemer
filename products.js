@@ -9,8 +9,8 @@ window.productData = [
     description: "A refined blend with natural depth and elegance.",
     inspiration: "Inspired by ocean winds meeting sun-warmed woods.",
     price: 145,
-    images: [
-      "img/sauvage1.png",
+        images: [
+      "https://res.cloudinary.com/dwftu867p/image/upload/v1775474663/cocodemer-blackxs-50_xppeyd.png",
       "img/sauvage2.png",
       "img/sauvage3.png"
     ]
