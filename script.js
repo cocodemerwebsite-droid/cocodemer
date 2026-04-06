@@ -148,6 +148,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }, 2500);
   }
+  function showErrorToast(message) {
+  const toast = document.getElementById("errorToast");
+  const msg = document.getElementById("errorMessage");
+
+  msg.textContent = message;
+
+  toast.classList.remove("invisible", "opacity-0", "translate-y-[-20px]");
+  toast.classList.add("opacity-100", "translate-y-0");
+
+  setTimeout(() => {
+    toast.classList.remove("opacity-100", "translate-y-0");
+    toast.classList.add("opacity-0", "translate-y-[-20px]");
+
+    setTimeout(() => {
+      toast.classList.add("invisible");
+    }, 400);
+
+  }, 2500);
+}
   window.addToCart = function (product, size, quantity) {
 
     let cart = getCart();
@@ -275,10 +294,15 @@ document.getElementById("confirmCheckout").onclick = function () {
   const pincode = document.getElementById("custPincode").value;
   const paymentText = document.getElementById("custPayment").value;
 
-  if (!name || !address || !pincode) {
-    alert("Please fill all fields");
-    return;
-  }
+if (!name || !address || !pincode) {
+  showErrorToast("Please fill all checkout details");
+  return;
+}
+
+if (pincode.length < 6) {
+  showErrorToast("Enter a valid pincode");
+  return;
+}
 
   const cart = getCart();
 

@@ -57,7 +57,8 @@
             href="soon.html">Coming&nbsp;Soon</a>
           <a class="text-white/80 hover:text-primary text-sm font-medium tracking-widest uppercase transition-colors"
             href="about.html">About</a>
-            <a class="text-white/80 hover:text-primary text-sm font-medium tracking-widest uppercase transition-colors" href="culture.html">Culture</a>
+          <a class="text-white/80 hover:text-primary text-sm font-medium tracking-widest uppercase transition-colors"
+            href="culture.html">Culture</a>
 
           <a class="text-white/80 hover:text-primary text-sm font-medium tracking-widest uppercase transition-colors"
             href="contact.html">Contact</a>
@@ -80,12 +81,12 @@
       </nav>
       <!-- Mobile Menu -->
       <div id="mobile-menu" class="mobile-menu">
-<a href="index.html">Home</a>
-<a href="product.html">Fragrance</a>
-<a href="soon.html">Coming Soon</a>
-<a href="about.html">About</a>
-<a href="culture.html">Culture</a>
-<a href="contact.html">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="product.html">Fragrance</a>
+        <a href="soon.html">Coming Soon</a>
+        <a href="about.html">About</a>
+        <a href="culture.html">Culture</a>
+        <a href="contact.html">Contact</a>
       </div>
       <main class="max-w-7xl mx-auto w-full px-6 py-16">
         <section class="text-center my-20">
@@ -535,8 +536,8 @@ dark:border-primary/10 py-4" id="categoryFilters">
       </path>
     </svg> -->
     <span class="material-symbols-outlined text-2xl">
-            shopping_bag
-          </span>
+      shopping_bag
+    </span>
   </a>
   </div>
 
@@ -590,9 +591,7 @@ dark:border-primary/10 py-4" id="categoryFilters">
         </span>
       </div>
 
-      <button 
-      id="openCheckout"
-       class="w-full bg-primary text-white py-4
+      <button id="openCheckout" class="w-full bg-primary text-white py-4
                    rounded-full uppercase text-xs tracking-[0.3em]
                    hover:bg-primary/90
                    transition-all duration-300
@@ -631,46 +630,62 @@ dark:border-primary/10 py-4" id="categoryFilters">
       </p>
     </div>
   </div>
-  <!-- CHECKOUT FORM MODAL -->
-<div id="checkoutModal"
-  class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden items-center justify-center z-[400]">
+  <!-- ERROR TOAST -->
+  <div id="errorToast" class="fixed top-6 right-6 bg-red-500 text-white
+            px-6 py-4 rounded-xl shadow-2xl
+            flex items-center gap-4
+            translate-y-[-20px] opacity-0 invisible
+            transition-all duration-400 z-[500]">
 
-  <div class="bg-white w-[95%] max-w-md p-6 rounded-xl shadow-2xl text-deep-forest">
+    <span class="material-symbols-outlined">
+      error
+    </span>
 
-    <h2 class="text-lg font-semibold mb-4 tracking-wide">
-      Checkout Details
-    </h2>
-
-    <input id="custName" type="text" placeholder="Full Name"
-      class="w-full mb-3 p-3 border rounded-lg focus:border-primary focus:ring-0">
-
-    <textarea id="custAddress" placeholder="Shipping Address"
-      class="w-full mb-3 p-3 border rounded-lg focus:border-primary focus:ring-0"></textarea>
-
-    <input id="custPincode" type="text" placeholder="Pincode"
-      class="w-full mb-3 p-3 border rounded-lg focus:border-primary focus:ring-0">
-
-    <select id="custPayment"
-      class="w-full mb-5 p-3 border rounded-lg focus:border-primary focus:ring-0">
-      <option value="UPI">UPI Payment</option>
-      <option value="Card">Card Payment</option>
-      <option value="COD">Cash on Delivery</option>
-    </select>
-
-    <div class="flex justify-between gap-3">
-      <button id="closeCheckout"
-        class="w-1/2 py-3 border rounded-lg hover:bg-gray-100 transition">
-        Cancel
-      </button>
-
-      <button id="confirmCheckout"
-        class="w-1/2 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition">
-        Proceed
-      </button>
+    <div>
+      <p class="text-sm font-semibold tracking-wide">
+        Error
+      </p>
+      <p id="errorMessage" class="text-xs text-white/80">
+        Please fill all fields
+      </p>
     </div>
-
   </div>
-</div>
+  <!-- CHECKOUT FORM MODAL -->
+  <div id="checkoutModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden items-center justify-center z-[400]">
+
+    <div class="bg-white w-[95%] max-w-md p-6 rounded-xl shadow-2xl text-deep-forest">
+
+      <h2 class="text-lg font-semibold mb-4 tracking-wide">
+        Checkout Details
+      </h2>
+
+      <input id="custName" type="text" placeholder="Full Name"
+        class="w-full mb-3 p-3 border rounded-lg focus:border-primary focus:ring-0">
+
+      <textarea id="custAddress" placeholder="Shipping Address"
+        class="w-full mb-3 p-3 border rounded-lg focus:border-primary focus:ring-0"></textarea>
+
+      <input id="custPincode" type="text" placeholder="Pincode"
+        class="w-full mb-3 p-3 border rounded-lg focus:border-primary focus:ring-0">
+
+      <select id="custPayment" class="w-full mb-5 p-3 border rounded-lg focus:border-primary focus:ring-0">
+        <option value="UPI">UPI Payment</option>
+        <option value="Card">Card Payment</option>
+        <option value="COD">Cash on Delivery</option>
+      </select>
+
+      <div class="flex justify-between gap-3">
+        <button id="closeCheckout" class="w-1/2 py-3 border rounded-lg hover:bg-gray-100 transition">
+          Cancel
+        </button>
+
+        <button id="confirmCheckout" class="w-1/2 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition">
+          Proceed
+        </button>
+      </div>
+
+    </div>
+  </div>
 </body>
 
 </html>
