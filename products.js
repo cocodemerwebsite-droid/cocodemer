@@ -9,7 +9,7 @@ window.productData = [
     description: "A refined blend with natural depth and elegance.",
     inspiration: "Inspired by ocean winds meeting sun-warmed woods.",
     price: 145,
-        images: [
+    images: [
       "https://res.cloudinary.com/dwftu867p/image/upload/v1775477534/cocodemer-pacificchill-30_gmsdov.png",
       "https://res.cloudinary.com/dwftu867p/image/upload/v1775477475/cocodemer-pacificchill-50_mf2orn.png",
       "img/sauvage3.png"
@@ -131,11 +131,11 @@ window.productData = [
     inspiration: "Wild open landscapes under blue skies.",
     price: 165,
     images: [
-      "img/sauvage1.png",
-      "img/sauvage2.png",
+      "https://res.cloudinary.com/dwftu867p/image/upload/v1775486016/cocodemer-sauvage-30_ih3frl.png",
+      "https://res.cloudinary.com/dwftu867p/image/upload/v1775485893/cocodemer-sauvage-50_bnsvfk.png",
       "https://res.cloudinary.com/dwftu867p/image/upload/v1775480065/cocodemer-sauvage-100_aadddd.png"
     ]
-  
+
   },
   {
     id: 11,
@@ -242,6 +242,31 @@ window.productData = [
       "img/sauvage2.png",
       "img/sauvage3.png"
     ]
+  },
+  {
+    "id": 19,
+    "name": "Armani Code",
+    "category": "Woody & Earthy",
+    "description": "Warm, seductive and elegant with a smooth spicy touch.",
+    "inspiration": "Timeless sophistication and effortless charm.",
+    "price": 170,
+    "images": [
+      "img/armanicode1.png",
+      "img/armanicode2.png",
+      "img/armanicode3.png"
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Gucci Guilty",
+    "category": "none",
+    "description": "Fresh, spicy and sensual with a modern masculine edge.",
+    "inspiration": "Freedom, confidence and fearless self-expression.",
+    "price": 165,
+    "images": [
+      "https://res.cloudinary.com/dwftu867p/image/upload/v1775486921/cocodemer-gucci-gulty-30_t1msqz.png",
+      "https://res.cloudinary.com/dwftu867p/image/upload/v1775486931/cocodemer-gucci-gulty-50_dmhiig.png",
+      "https://res.cloudinary.com/dwftu867p/image/upload/v1775486909/cocodemer-gucci-gulty-100_kngczf.png"
+    ]
   }
-
 ];
