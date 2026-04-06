@@ -238,33 +238,184 @@ document.addEventListener("DOMContentLoaded", function () {
     cartDrawer.classList.add("translate-x-full");
   };
 
+  // /* ==================================
+  //    WHATSAPP CHECKOUT
+  // ================================== */
+  // window.buyCartViaWhatsApp = function () {
+
+  //   const cart = getCart();
+  //   if (!cart.length) {
+  //     alert("Your cart is empty.");
+  //     return;
+  //   }
+
+  //   let message = "Hello COCO DEMER,\n\nI would like to order:\n\n";
+  //   let total = 0;
+
+  //   cart.forEach(item => {
+  //     message += `• ${item.name} (${item.size}) x${item.quantity} - Rs: ${item.price}\n`;
+  //     total += item.price * item.quantity;
+  //   });
+
+  //   message += `\nTotal: Rs: ${total}\n\nPlease confirm availability.\nThank you.`;
+
+  //   const phoneNumber = "9895522449";
+  //   const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+  //   window.open(url, "_blank");
+  // };
+
   /* ==================================
-     WHATSAPP CHECKOUT
-  ================================== */
-  window.buyCartViaWhatsApp = function () {
+   WHATSAPP CHECKOUT (FULL - WITH QR)
+================================== */
+document.getElementById("confirmCheckout").onclick = function () {
 
-    const cart = getCart();
-    if (!cart.length) {
-      alert("Your cart is empty.");
-      return;
-    }
+  const name = document.getElementById("custName").value;
+  const address = document.getElementById("custAddress").value;
+  const pincode = document.getElementById("custPincode").value;
+  const paymentText = document.getElementById("custPayment").value;
 
-    let message = "Hello COCO DEMER,\n\nI would like to order:\n\n";
-    let total = 0;
+  if (!name || !address || !pincode) {
+    alert("Please fill all fields");
+    return;
+  }
 
-    cart.forEach(item => {
-      message += `• ${item.name} (${item.size}) x${item.quantity} - Rs: ${item.price}\n`;
-      total += item.price * item.quantity;
-    });
+  const cart = getCart();
 
-    message += `\nTotal: Rs: ${total}\n\nPlease confirm availability.\nThank you.`;
+  let message = `🛍 *New Order - COCO DEMER*\n\n`;
+  message += `👤 Name: ${name}\n`;
+  message += `📍 Address: ${address}\n`;
+  message += `📦 Pincode: ${pincode}\n`;
+  message += `💳 Payment: ${paymentText}\n\n`;
 
-    const phoneNumber = "9895522449";
-    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  message += `🧾 *Order Details:*\n`;
 
-    window.open(url, "_blank");
-  };
+  let total = 0;
 
+  cart.forEach(item => {
+    message += `• ${item.name} (${item.size}) x${item.quantity} - Rs: ${item.price * item.quantity}\n`;
+    total += item.price * item.quantity;
+  });
+
+  const shippingFee = total > 999 ? 0 : 50;
+  const grandTotal = total + shippingFee;
+
+  message += `\nSubtotal: Rs: ${total}`;
+  message += `\nShipping: Rs: ${shippingFee}`;
+  message += `\n*Total: Rs: ${grandTotal}*\n\n`;
+
+  // UPI
+  const upiId = "yourupi@upi";
+  const upiLink = `upi://pay?pa=${upiId}&pn=COCO%20DEMER&am=${grandTotal}&cu=INR`;
+
+  const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(upiLink)}`;
+
+  message += `💰 Pay here:\n${upiLink}\n\n`;
+  message += `📷 QR:\n${qrCodeUrl}\n\n`;
+  message += `Send payment screenshot after paying.`;
+
+  const phoneNumber = "9895522449";
+  const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+  window.open(url, "_blank");
+
+  checkoutModal.classList.add("hidden");
+};
+// window.buyCartViaWhatsApp = function () {
+
+//   const cart = getCart();
+//   if (!cart.length) {
+//     alert("Your cart is empty.");
+//     return;
+//   }
+
+//   // --- CUSTOMER DETAILS ---
+//   const name = prompt("Enter your name:");
+//   const address = prompt("Enter your shipping address:");
+//   const pincode = prompt("Enter your pincode:");
+//   const paymentMethod = prompt("Choose payment method:\n1. UPI\n2. Card\n3. Cash on Delivery");
+
+//   let paymentText = "";
+//   if (paymentMethod === "1") paymentText = "UPI Payment";
+//   else if (paymentMethod === "2") paymentText = "Card Payment";
+//   else paymentText = "Cash on Delivery";
+
+//   // --- ORDER CALCULATION ---
+//   let message = `🛍 *New Order - COCO DEMER*\n\n`;
+//   message += `👤 Name: ${name}\n`;
+//   message += `📍 Address: ${address}\n`;
+//   message += `📦 Pincode: ${pincode}\n`;
+//   message += `💳 Payment: ${paymentText}\n\n`;
+
+//   message += `🧾 *Order Details:*\n`;
+
+//   let total = 0;
+
+//   cart.forEach(item => {
+//     message += `• ${item.name} (${item.size}) x${item.quantity} - Rs: ${item.price * item.quantity}\n`;
+//     total += item.price * item.quantity;
+//   });
+
+//   const shippingFee = total > 999 ? 0 : 50;
+//   const grandTotal = total + shippingFee;
+
+//   message += `\nSubtotal: Rs: ${total}`;
+//   message += `\nShipping: Rs: ${shippingFee}`;
+//   message += `\n*Total: Rs: ${grandTotal}*\n\n`;
+
+//   // --- UPI DETAILS ---
+//   const upiId = "yourupi@upi"; // 🔁 CHANGE THIS
+//   const nameEncoded = encodeURIComponent("COCO DEMER");
+
+// // UPI Payment Link
+// const upiLink = `upi://pay?pa=${upiId}&pn=${nameEncoded}&am=${grandTotal}&cu=INR`;
+
+// // ✅ Better QR Code (more reliable)
+// const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(upiLink)}`;
+
+// // --- ADD TO MESSAGE ---
+// message += `💰 *Pay via UPI:*\n`;
+// message += `${upiLink}\n\n`;
+
+// message += `📷 *Scan QR to Pay:*\n`;
+// message += `${qrCodeUrl}\n\n`;
+
+// message += `📌 UPI ID: ${upiId}\n`;
+// message += `📌 Amount: Rs: ${grandTotal}\n\n`;
+
+// message += `⚠️ After payment, send screenshot here.\n`;
+// message += `🚚 Tracking will be shared after dispatch.\n`;
+// message += `Thank you ❤️`;
+
+//   // --- OPEN WHATSAPP ---
+//   const phoneNumber = "9895522449";
+//   const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+//   window.open(url, "_blank");
+// };
+
+/* ==================================
+   CHECKOUT FORM LOGIC
+================================== */
+const checkoutModal = document.getElementById("checkoutModal");
+
+// OPEN FORM
+document.getElementById("openCheckout").onclick = () => {
+  const cart = getCart();
+  if (!cart.length) {
+    alert("Your cart is empty.");
+    return;
+  }
+
+  checkoutModal.classList.remove("hidden");
+  checkoutModal.classList.add("flex");
+};
+
+// CLOSE FORM
+document.getElementById("closeCheckout").onclick = () => {
+  checkoutModal.classList.add("hidden");
+  checkoutModal.classList.remove("flex");
+};
   updateCartUI();
 
 });
