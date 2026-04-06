@@ -10,8 +10,8 @@ window.productData = [
     inspiration: "Inspired by ocean winds meeting sun-warmed woods.",
     price: 145,
         images: [
-      "https://res.cloudinary.com/dwftu867p/image/upload/v1775474663/cocodemer-blackxs-50_xppeyd.png",
-      "img/sauvage2.png",
+      "https://res.cloudinary.com/dwftu867p/image/upload/v1775477534/cocodemer-pacificchill-30_gmsdov.png",
+      "https://res.cloudinary.com/dwftu867p/image/upload/v1775477475/cocodemer-pacificchill-50_mf2orn.png",
       "img/sauvage3.png"
     ]
   },
@@ -23,9 +23,9 @@ window.productData = [
     inspiration: "A journey through endless creative horizons.",
     price: 160,
     images: [
-      "img/sauvage1.png",
-      "img/sauvage2.png",
-      "img/sauvage3.png"
+      "https://res.cloudinary.com/dwftu867p/image/upload/v1775479592/cocodemer-imagination-30_hdqdzi.png",
+      "https://res.cloudinary.com/dwftu867p/image/upload/v1775479597/cocodemer-imagination-50_kl3xah.png",
+      "https://res.cloudinary.com/dwftu867p/image/upload/v1775479606/cocodemer-imagination-100_xcnylt.png"
     ]
   },
   {
@@ -37,7 +37,7 @@ window.productData = [
     price: 210,
     images: [
       "img/sauvage1.png",
-      "img/sauvage2.png",
+      "https://res.cloudinary.com/dwftu867p/image/upload/v1775478704/cocodemer-aventus-50_ch4pjq.png",
       "img/sauvage3.png"
     ]
   },
@@ -49,8 +49,8 @@ window.productData = [
     inspiration: "Inspired by open deserts and freedom.",
     price: 175,
     images: [
-      "img/sauvage1.png",
-      "img/sauvage2.png",
+      "https://res.cloudinary.com/dwftu867p/image/upload/v1775478174/cocodemer-OL-30_pquuih.png",
+      "https://res.cloudinary.com/dwftu867p/image/upload/v1775478161/cocodemer-OL-50_jw1uzu.png",
       "img/sauvage3.png"
     ]
   },
@@ -133,7 +133,7 @@ window.productData = [
     images: [
       "img/sauvage1.png",
       "img/sauvage2.png",
-      "img/sauvage3.png"
+      "https://res.cloudinary.com/dwftu867p/image/upload/v1775480065/cocodemer-sauvage-100_aadddd.png"
     ]
   
   },
